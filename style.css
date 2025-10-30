@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'pretendard','Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+};
+
+h1 {
+  font-size: 3rem;
+  color: #ff5722;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #ff7043;
+  margin-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #ff8a65;
+  margin-bottom: 1.5em;
+}
+
+#result-area, #chance-area {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  font-size: 1.2rem;
+}
+#user-input {
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #ff7043;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+  outline: none;
+}
+
+#user-input:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 5px rgba(255,87,34,0.5);
+}
+button {
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff5722;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+📁 number-game/
+ ┣ 📄 index.html
+ ┣ 📄 style.css
+ ┗ 📄 main.js
+ 

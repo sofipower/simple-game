@@ -27,7 +27,8 @@ body {
 
 /* 🧨 제목 스타일 */
 h1 {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
+  
   color: #ffea00;
   text-shadow: 4px 4px 0 #000;
   animation: shake 1.5s infinite ease-in-out;

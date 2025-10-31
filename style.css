@@ -1,84 +1,139 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'pretendard','Noto Sans KR', sans-serif;
-    background: linear-gradient(135deg, #f6d365, #fda085);
-    color: #333;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-};
+body {
+  font-family: 'Pretendard', 'Comic Sans MS', cursive;
+  background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTJzcTJjemhnMHRybGF6N2o2bnY4d2xrNjBkOHNya3BnNGV6dGp4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/u8CAYrGqrDjzgd77nP/giphy.gif') center/cover no-repeat fixed; /* 해골 배경 */
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: hueShift 10s infinite linear;
+}
 
+/* 💫 배경색이 계속 바뀌는 효과 */
+@keyframes hueShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* 🧨 제목 스타일 */
 h1 {
-  font-size: 3rem;
-  color: #ff5722;
-  margin-bottom: 0.5em;
+  font-size: 3.2rem;
+  color: #ffea00;
+  text-shadow: 4px 4px 0 #000;
+  animation: shake 1.5s infinite ease-in-out;
 }
 
 h2 {
-  font-size: 1.8rem;
-  color: #ff7043;
-  margin-bottom: 0.3em;
+  font-size: 2rem;
+  color: #ff6eff;
+  text-shadow: 2px 2px 0 #000;
+  margin: 10px 0;
 }
 
 h3 {
-  font-size: 1.5rem;
-  color: #ff8a65;
-  margin-bottom: 1.5em;
+  font-size: 1.6rem;
+  color: #00ffff;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 30px;
 }
 
+/* 흔들리는 제목 */
+@keyframes shake {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+/* 📦 결과/기회 박스 */
 #result-area, #chance-area {
-  background-color: white;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #111;
+  border: 4px dashed #ff00c8;
+  border-radius: 20px;
   padding: 15px 25px;
   margin: 10px 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 250px;
-  font-size: 1.2rem;
+  width: 260px;
+  font-size: 1.3rem;
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.7);
+  animation: bounce 2.5s infinite ease-in-out;
 }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ⌨️ 입력창 */
 #user-input {
   padding: 10px;
-  font-size: 1.2rem;
-  border: 2px solid #ff7043;
-  border-radius: 8px;
-  width: 100px;
+  font-size: 1.4rem;
+  border: 3px solid #ffea00;
+  border-radius: 10px;
+  width: 120px;
   text-align: center;
+  background-color: #fff6b8;
+  color: #222;
+  margin-top: 10px;
   outline: none;
 }
 
 #user-input:focus {
-  border-color: #ff5722;
-  box-shadow: 0 0 5px rgba(255,87,34,0.5);
+  background-color: #fff;
+  box-shadow: 0 0 15px #ffea00;
 }
+
+/* 🔘 버튼 */
 button {
-  background-color: #ff7043;
-  color: white;
+  background: linear-gradient(45deg, #ff00c8, #ffea00);
+  color: #000;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   margin: 10px;
-  border-radius: 8px;
+  border-radius: 30px;
   font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
 }
 
 button:hover {
-  background-color: #ff5722;
+  transform: scale(1.1) rotate(-4deg);
+  box-shadow: 0 0 25px rgba(255, 0, 200, 1);
 }
 
 button:disabled {
-  background-color: #ccc;
+  background: gray;
   cursor: not-allowed;
+  color: #555;
 }
-📁 number-game/
- ┣ 📄 index.html
- ┣ 📄 style.css
- ┗ 📄 main.js
- 
+
+/* 🐸 해모수 등장! (움짤) */
+body::after {
+  content: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWEzOXI0NjB5eGM0cjFzdXh3bjMzampxZ2docGk2Z24xOXQ5cjE3eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wofyg8nxsWEmtR7eOK/giphy.gif'); /* 웃긴 해모수 짤 (움짤 버전) */
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  transform: scale(1.4);
+  animation: dance 3s infinite ease-in-out;
+}
+
+/* 🕺 해모수 춤추기 */
+@keyframes dance {
+  0%, 100% { transform: rotate(0deg) scale(1.4); }
+  50% { transform: rotate(10deg) scale(1.5); }
+}
+
+/* 💥 버튼 누를 때 화면 흔들림 */
+html {
+  transition: transform 0.1s ease;
+}
